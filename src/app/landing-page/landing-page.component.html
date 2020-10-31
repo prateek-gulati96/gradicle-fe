@@ -1,0 +1,690 @@
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+<app-popup-component *ngIf="showPopup"></app-popup-component>
+
+<div id="main" class="main-content-wraper">
+    <div class="main-content-inner">
+        <header class="header">
+            <!--start navbar-->
+            <div class="navbar  navbar-default navbar-fixed-top" background-color="#281483" >
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar-header page-scroll">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                    data-target="#myNavbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand page-scroll" href="index.html">
+                                <img height="50" width="30" src="./assets/img/logo2.png" alt="logo">
+                            </a>
+                        </div>
+                        <!-- <div  style="display:flex;">
+                            <div></div>
+                        </div> -->
+                       
+                        <span style="color:white;margin-left: 30%;"><a style="color:white;" class="page-scroll" href="#hero">Home</a></span>
+                        <span style="color:white;margin-left: 3%;"><a style="color:white;" class="page-scroll" href="#timeline">Timeline</a></span>
+                        <span style="color:white;margin-left: 3%;"><a  style="color:white;" class="page-scroll" href="#pricing">Courses</a></span>
+                        <span style="color:white;margin-left: 3%;"><a style="color:white;" class="page-scroll" href="#faqs">Faq</a></span>
+                        <span style="color:white;margin-left: 3%;"><a style="color:white;" class="page-scroll" href="#news">News</a></span>
+                        <span style="color:white;margin-left: 3%;"><a style="color:white;" class="page-scroll" href="#contact">Contact</a></span>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <!-- <div  class="navbar-collapse collapse" id="myNavbar">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active"><a class="page-scroll" href="#hero">Home</a></li>
+                                <li><a class="page-scroll" href="#features">Features</a></li>
+                                <li><a class="page-scroll" href="#pricing">Pricing</a></li>
+                                <li><a class="page-scroll" href="#faqs">Faq</a></li>
+                                <li><a class="page-scroll" href="#news">News</a></li>
+                                <li><a class="page-scroll" href="#contact">Contact</a></li>
+                            </ul>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!--end navbar-->
+        </header>
+        <!--end header section-->
+            <!--start slider section-->
+            <section id="hero" class="hero-content hero-slider-section-one section-lg" style="background: url('./assets/img/hero-bg2.jpg')no-repeat center center / cover">
+                <div class="hero-slider-wrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="hero-content-wrap">
+                                    <div class="hero-content typed-strings">
+                                        <h1>Gradicle <br><span class="typed"></span></h1>
+                                        <p style="color:white;">This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.</p>
+                                        <div class="slider-action-btn">
+                                            <a href="#" class="btn btn-icon"><i class="fa fa-youtube"></i></a>
+                                            <a href="#" class="btn btn-icon"><i class="fa fa-instagram"></i></a>
+                                            <a href="#" class="btn btn-icon"><i class="fa fa-envelope"></i></a>
+                                            <a (click)="showPopup=!showPopup" class="video">
+                                                <span class="ti-control-play"></span>
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mobile-slider-area">
+                                    <br>
+                                    <div class="phone">
+                                        <img src="./assets/img/cap.png" alt="Phone" class="img-responsive">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-shape">
+                    <div class="river-wave"></div>
+                    <div class="river-wave"></div>
+                </div>
+            </section>
+            <!--end slider section-->
+              <!--start product counter section-->
+        <div class="product-counter-section ptb-40">
+            <div class="product-counter-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-6">
+                            <div class="counter-content-wrap">
+                                <span class="ti-cup"></span>
+                                <p class="counter-title"><strong>Trusted by 100000+</strong></p>
+                                <p>Study abroad students worldwide</p>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-6">
+                            <ul class="counter-list list-inline text-right">
+                                <li>
+                                    <span class="count">102k</span>
+                                    <span class="title">Subscribers</span>
+                                </li>
+                                <li>
+                                    <span class="count">12M</span>
+                                    <span class="title">Views</span>
+                                </li>
+                                <li>
+                                    <span class="count">10000+</span>
+                                    <span class="title">Students benefited</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="section3">
+            <div class="flex">
+                <div *ngIf="blogInfo[0]" class="quarterWidth" style="background-color: #E8E8E8;padding-top:4%;padding-bottom: 4%;">
+                    <div class="ti-face-smile  "></div>                   
+                    <div  class="secTriInner">{{blogInfo[0].subcategory}}</div>
+                    <a routerLink="/blogs"  [queryParams]="blogInfo[0]" style="margin-left:10%;">{{blogInfo[0].blogTopic}}</a>
+                </div>
+                <div *ngIf="blogInfo[1]" class="quarterWidth" style="background-color: #E8E8E8;padding-top:4%;padding-bottom: 4%;margin-left: 2%;">
+                    <div class="ti-face-smile  "></div>                   
+                    <div  class="secTriInner">{{blogInfo[1].subcategory}}</div>
+                    <a routerLink="/blogs"  [queryParams]="blogInfo[1]" style="margin-left:10%;">{{blogInfo[1].blogTopic}}</a>
+                </div>
+                <div *ngIf="blogInfo[2]" class="quarterWidth" style="background-color: #E8E8E8;padding-top:4%;padding-bottom: 4%;margin-left: 2%;">
+                    <div class="ti-face-smile  "></div>                   
+                    <div  class="secTriInner">{{blogInfo[2].subcategory}}</div>
+                    <a routerLink="/blogs"  [queryParams]="blogInfo[2]" style="margin-left:10%;">{{blogInfo[2].blogTopic}}</a>
+                </div>
+                <div *ngIf="blogInfo[3]" class="quarterWidth" style="background-color: #E8E8E8;padding-top:4%;padding-bottom: 4%;margin-left: 2%;">
+                    <div class="ti-face-smile  "></div>                   
+                    <div  class="secTriInner">{{blogInfo[3].subcategory}}</div>
+                    <a routerLink="/blogs"  [queryParams]="blogInfo[3]" style="margin-left:10%;">{{blogInfo[3].blogTopic}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="section3">
+            <div class="flex">
+                <div *ngIf="blogInfo[4]" class="quarterWidth" style="background-color: #E8E8E8;padding-top:4%;padding-bottom: 4%;">
+                    <div class="ti-face-smile  "></div>                   
+                    <div   class="secTriInner">{{blogInfo[4].subcategory}}</div>
+                    <a routerLink="/blogs" [queryParams]="blogInfo[4]" style="margin-left:10%;">{{blogInfo[4].blogTopic}}</a>
+                </div>
+                <div *ngIf="blogInfo[5]" class="quarterWidth" style="background-color: #E8E8E8;padding-top:4%;padding-bottom: 4%;margin-left: 2%;">
+                    <div class="ti-face-smile  "></div>                   
+                    <div   class="secTriInner">{{blogInfo[5].subcategory}}</div>
+                    <a routerLink="/blogs" [queryParams]="blogInfo[5]" style="margin-left:10%;">{{blogInfo[5].blogTopic}}</a>
+                </div>
+                <div *ngIf="blogInfo[6]" class="quarterWidth" style="background-color: #E8E8E8;padding-top:4%;padding-bottom: 4%;margin-left: 2%;">
+                    <div class="ti-face-smile  "></div>                   
+                    <div  class="secTriInner">{{blogInfo[6].subcategory}}</div>
+                    <a routerLink="/blogs"  [queryParams]="blogInfo[6]" style="margin-left:10%;">{{blogInfo[6].blogTopic}}</a>
+                </div>
+                <div *ngIf="blogInfo[7]" class="quarterWidth" style="background-color: #E8E8E8;padding-top:4%;padding-bottom: 4%;margin-left: 2%;">
+                    <div class="ti-face-smile  "></div>                   
+                    <div  class="secTriInner">{{blogInfo[7].subcategory}}</div>
+                    <a routerLink="/blogs"  [queryParams]="blogInfo[7]" style="margin-left:10%;">{{blogInfo[7].blogTopic}}</a>
+                </div>
+                <!-- <div *ngIf="blogInfo[]" class="quarterWidth">
+                    <div class="marginForty">icon</div>
+                    <div class="secTriInner">Ideation</div>
+                    <div style="width:60%;margin-left:40%;">This is the first step where you start planning about things</div>
+                </div>
+                <div *ngIf="blogInfo[]" class="quarterWidth">
+                    <div class="marginForty">icon</div>
+                    <div class="secTriInner">Ideation</div>
+                    <div style="width:60%;margin-left:40%;">This is the first step where you start planning about things</div>
+                </div>
+                <div *ngIf="blogInfo[]" class="quarterWidth">
+                    <div class="marginForty">icon</div>
+                    <div class="secTriInner">Ideation</div>
+                    <div style="width:60%;margin-left:40%;">This is the first step where you start planning about things</div>
+                </div>
+                <div *ngIf="blogInfo[]" class="quarterWidth">
+                    <div class="marginForty">icon</div>
+                    <div class="secTriInner">Ideation</div>
+                    <div style="width:60%;margin-left:40%;">This is the first step where you start planning about things</div>
+                </div> -->
+            </div>
+        </div>
+        <br><br>
+        <br>    
+        <!--end product counter section-->
+         <!--start software overview section-->
+         <section  id="timeline" class="overview-section ptb-90">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-heading text-center white-text overview-heading">
+                            <h3 class="white-text">Timeline</h3>
+                            <p class="white-text">Lets describe the timeline here. This is a journey that will help you plan your life abroad and many other things that I dont know right now but will be chnaged soon.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="nav-center overview-center-tab">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#nav-1" data-toggle="tab">
+                                    <span class="ti-before"></span>
+                                    Pre Application
+                                </a></li>
+                                <li><a href="#nav-2" data-toggle="tab">
+                                    <span class="ti-after"></span>
+                                    Post Application
+                                </a></li>
+                                <li><a href="#nav-3" data-toggle="tab">
+                                    <span class="ti-Life"></span>
+                                   Life in US
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-content-wrap">
+                            <div class="tab-content clearfix">
+                                <div class="tab-pane fade active in" id="nav-1">
+                                    <div class="col-md-6">
+                                        <div class="overview-feature-content-image">
+                                            <img src="./assets/img/icecream.png" alt="" class="img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="overview-feature-content">
+                                            <h6>Pre Application</h6>
+                                            <p class="white-text">This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.</p>
+                                    
+                                      
+                                            <ul class="overview-list">
+                                                <li><span href="#" class="ti-vector"></span> Scheduling</li>
+                                                <li><span href="#" class="ti-bar-chart"></span> Online Consultations</li>
+                                                <li><span href="#" class="ti-headphone-alt"></span> Application</li>
+                                                <li><span href="#" class="ti-cup"></span> Visa</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-2">
+                                    <div class="col-md-6">
+                                        <div class="overview/-feature-content">
+                                            <h6 class="white-text">Post Application</h6>
+                                            <p class="white-text">This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.</p>
+                                            <ul class="overview-list white-text">
+                                                <li ><span class="ti-vector"></span> Scheduling</li>
+                                                <li><span class="ti-bar-chart"></span> Online Consultations</li>
+                                                <li><span class="ti-headphone-alt"></span> Application</li>
+                                                <li><span class="ti-cup"></span> Visa</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="overview-feature-content-image">
+                                            <img src="./assets/img/icecream2.png" alt="" class="img-responsive">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="nav-3">
+                                    <div class="col-md-6">
+                                        <div class="overview-feature-content-image">
+                                            <img src="./assets/img/icecream3.png" alt="" class="img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="overview-feature-content">
+                                            <h6>Post Application</h6>
+                                            <p class="white-text">This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.</p>
+                                            <ul class="overview-list">
+                                                <li><span class="ti-vector"></span> Scheduling</li>
+                                                <li><span class="ti-bar-chart"></span> Online Consultations</li>
+                                                <li><span class="ti-headphone-alt"></span> Application</li>
+                                                <li><span class="ti-cup"></span> Visa</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </section>
+
+       
+        <!--end software overview section-->
+        <!-- Calendly link widget begin -->
+
+
+    <br>
+    <br>
+    <br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="video-play-button">
+                <a href="https://www.youtube.com/watch?v=9No-FiEInLA"
+                   class="video video-play mfp-iframe" data-toggle="modal"
+                   data-target="#video-popup">
+                    <span class="ti-control-play"></span>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!--end app video section-->
+
+
+ <!--start pricing-->
+ <section id="pricing" class="pricing-section ptb-90">
+    <div class="pricing-section-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading text-center">
+                        <h3>Upcoming Courses</h3>
+                        <p>We want to bring the best courses for you very soon. This is gonna be very interesting part stay tuned</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="bg-color-sky-light">
+                    <div class="content-md container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <!--start pricing single-->
+                                <div class="pricing-single bg-secondary">
+                                    <div class="pricing-single-header">
+                                        <h4>LinkedIn</h4>
+                                        <span>1-2 Months</span>
+                                    </div>
+                                    <div class="pricing-single-content">
+                                        <div class="mb-40">
+                                            <span class="price-icon-sign"><i class="fa fa-dollar"></i></span>
+                                            <span class="main-price">7.</span>
+                                            <span class="sub-price">00</span>
+                                            <span class="main-price-info">Month</span>
+                                        </div>
+                                        <div class="center-block">
+                                            <button type="button" class="softo-btn-outline">Register Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end pricing single-->
+                            </div>
+                            <div class="col-md-4">
+                                <!--start pricing single-->
+                                <div class="pricing-single bg-secondary">
+                                    <div class="pricing-single-header">
+                                        <h4>LinkedIn</h4>
+                                        <span>1-2 Months</span>
+                                    </div>
+                                    <div class="pricing-single-content">
+                                        <div class="mb-40">
+                                            <span class="price-icon-sign"><i class="fa fa-dollar"></i></span>
+                                            <span class="main-price">7.</span>
+                                            <span class="sub-price">00</span>
+                                            <span class="main-price-info">Month</span>
+                                        </div>
+                                        <div class="center-block">
+                                            <button type="button" class="softo-solid-btn">Register Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end pricing single-->
+                            </div>
+                            <div class="col-md-4">
+                                <!--start pricing single-->
+                                <div class="pricing-single bg-secondary">
+                                    <div class="pricing-single-header">
+                                        <h4>LinkedIn</h4>
+                                        <span>1-2 Months</span>
+                                    </div>
+                                    <div class="pricing-single-content">
+                                        <div class="mb-40">
+                                            <span class="price-icon-sign"><i class="fa fa-dollar"></i></span>
+                                            <span class="main-price">7.</span>
+                                            <span class="sub-price">00</span>
+                                            <span class="main-price-info">Month</span>
+                                        </div>
+                                        <div class="center-block">
+                                            <button type="button" class="softo-btn-outline">Register Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end pricing single-->
+                            </div>
+                        </div>
+                        <!--end row-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end pricing-->
+
+
+<br>
+<br>
+
+        <!--start download section-->
+        <!-- <section class="download-section" style="background: url('./assets/img/download-bg.jpg')no-repeat center center fixed"> -->
+        <section class="download-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 hidden-sm">
+                        <div class="download-app-img">
+                            <img src="./assets/img/cap.png" alt="app download" class="img-responsive">
+                        </div>
+                    </div>
+              
+                    <div class="col-md-7 col-sm-12">
+                        <div class="download-app-text">
+                            <h3>Want to get in touch?</h3>
+                            <p class="white-text">This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.</p>
+                            <div class="download-app-button">
+                                <a href="#"  class="download-btn hover-active" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hariompalkar/30min'});return false;">
+                                    <span class="ti-face-smile"></span>
+                                    <p>
+                                        Schedule time with me
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end download section-->
+
+        <!--start faq section-->
+        <section id="faqs" class="faq-section ptb-90">
+            <div class="faq-section-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="section-heading">
+                                <h3>Faq's</h3>
+                                <p>We believe in making simple for you. Choose your next successful career plan
+                                    and get started today!.</p>
+                            </div>
+                            <div class="panel-group" id="accordion">
+                                <!-- Start Single Item -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">
+                                                What are the tests to be taken for Masters/MBA?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl
+                                                lorem,
+                                                dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero,
+                                                egestas eu
+                                                tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus,
+                                                blandit
+                                                posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+                                <!-- Start Single Item -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                                Can I apply to US universities without GRE/GMAT 
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl
+                                                lorem,
+                                                dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero,
+                                                egestas eu
+                                                tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus,
+                                                blandit
+                                                posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+                                <!-- Start Single Item -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                                What is a statement of Purpose?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl
+                                                lorem,
+                                                dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero,
+                                                egestas eu
+                                                tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus,
+                                                blandit
+                                                posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+                                <!-- Start Single Item -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" id="headingFour">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                                What is a recommendation letter?
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl
+                                                lorem,
+                                                dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero,
+                                                egestas eu
+                                                tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus,
+                                                blandit
+                                                posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="faq-img">
+                                <img src="./assets/img/icecream4.png" class="img-responsive" alt="faq image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end faq section-->
+
+        <!--start blog section -->
+        <section id="news" class="ptb-90 bg-secondary">
+            <div class="blog-section-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-heading text-center">
+                                <h3>Latest Videos/Blogs</h3>
+                                <p>Streamlining different processes and workflows by using user access control Onebook
+                                    prompts efficiency and productivity levels of an organization, and reduces operating
+                                    costs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="sliderBlog" class="owl-carousel">
+                            <div class="single-blog-article">
+                                <div class="blog-post-img-thumb">
+                                    <a href="blog-details.html" target="_blank">
+                                        <img src="./assets/img/blog-img1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog-post-content-area">
+                                    <h3><a href="blog-details.html" target="_blank">H1B Visa Issues</a></h3>
+                                    <p>Streamlining different processes and workflows by using user access control Onebook
+                                        prompts efficiency and productivity levels of an organization, and reduces operating
+                                        costs. </p>
+                                    <div class="blog-footer-area">
+                                        <a class="readmore-btn" href="blog-details.html" target="_blank">Read
+                                            More <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-blog-article">
+                                <div class="blog-post-img-thumb">
+                                    <a href="blog-details.html" target="_blank">
+                                        <img src="./assets/img/blog-img1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog-post-content-area">
+                                    <h3><a href="blog-details.html" target="_blank">H1B Visa Issues</a></h3>
+                                    <p>Streamlining different processes and workflows by using user access control Onebook
+                                        prompts efficiency and productivity levels of an organization, and reduces operating
+                                        costs. </p>
+                                    <div class="blog-footer-area">
+                                        <a class="readmore-btn" href="blog-details.html" target="_blank">Read
+                                            More <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-blog-article">
+                                <div class="blog-post-img-thumb">
+                                    <a href="blog-details.html" target="_blank">
+                                        <img src="./assets/img/blog-img1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog-post-content-area">
+                                    <h3><a href="blog-details.html" target="_blank">H1B Visa Issues</a></h3>
+                                    <p>Streamlining different processes and workflows by using user access control Onebook
+                                        prompts efficiency and productivity levels of an organization, and reduces operating
+                                        costs. </p>
+                                    <div class="blog-footer-area">
+                                        <a class="readmore-btn" href="blog-details.html" target="_blank">Read
+                                            More <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-blog-article">
+                                <div class="blog-post-img-thumb">
+                                    <a href="blog-details.html" target="_blank">
+                                        <img src="./assets/img/blog-img1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog-post-content-area">
+                                    <h3><a href="blog-details.html" target="_blank">H1B Visa Issues</a></h3>
+                                    <p>Streamlining different processes and workflows by using user access control Onebook
+                                        prompts efficiency and productivity levels of an organization, and reduces operating
+                                        costs. </p>
+                                    <div class="blog-footer-area">
+                                        <a class="readmore-btn" href="blog-details.html" target="_blank">Read
+                                            More <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end blog section -->
+
+        <!--start footer section-->
+        <section id="contact">
+            <footer class="footer-section bg-secondary ptb-60">
+                <div class="footer-wrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="footer-single-col text-center">
+                                    <img src="./assets/img/gradicle.jpeg" alt="footer logo">
+                                    <div class="footer-social-list">
+                                        <ul class="list-inline">
+                                            <li><a href="#"> <i class="fa fa-youtube"></i></a></li>
+                                            <li><a href="#"> <i class="fa fa-instagram"></i></a></li>
+                                            <li><a href="#"> <i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"> <i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"> <i class="fa fa-linkedin"></i></a></li>
+                                         
+                                        </ul>
+                                    </div>
+                                    <div class="copyright-text">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    
+        </section>
+             <!--end footer section-->
+
+    </div><!--end main content inner-->
+</div>

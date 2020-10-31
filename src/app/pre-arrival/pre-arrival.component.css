@@ -1,0 +1,59 @@
+.bg{
+    background: linear-gradient(#f3b81e 30%, #f3d82f 100%);
+}
+.boldAndBig{
+    font-weight:800;
+    font-size: 1.5em;
+}
+.additionalTopSection{
+    padding-bottom:7%;color:white;padding-top: 1.3%;
+}
+.home{
+    margin-top:4%;padding-left:10%;
+}
+.routes{
+    margin-left:3%;
+    color:white;
+    float: right;
+}
+.page-scroll{
+    color: white;
+}
+.quarterWidth{
+    width: 25%;
+    padding: 4% 4% 4% 4%
+}
+.secTriInner{
+    margin-left:35%;font-weight:800;
+}
+.flex{
+    display:flex;
+}
+.section3{
+    padding-left:10%;padding-right:10%;padding-top:5%;;
+}
+.secInnerBody{
+    text-align: center;
+    font: 8px;
+    margin: 2px 2px 2px 2px ;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    border: 1px #ccc thin;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+  .bodyBox{
+    flex: 2;
+    font-size: 15px;
+  }

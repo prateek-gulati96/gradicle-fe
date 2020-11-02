@@ -45,17 +45,25 @@
             </div>
         </div>
     </div>
-    <!-- <div *ngFor="let blogs of blogDetails" class="container">   
-        <div class="card">
+    <div *ngFor="let blogs of blogDetails" class="container">   
+        <div class="boldAndBig">
+            {{blogs.subCategory}}
+        </div>
+        <br>
+        <div class="card" (click)="openBlog(blogs)">
+            <div>
+                <img [src]="blogs.image" height="150px" width="1100px" alt="some issue with loading image">
+            </div>
           <div>
             <b>{{blogs.blogTopic}}</b>
           </div> 
 
           <div class="bodyBox">
-            {{blogs.body}}
+            {{blogs.body | shortenText:250}}
           </div>
-            <br>
+        <br>   
         </div>
         <br>
-      </div> -->
+        <br><br>
+    </div>
 </div>

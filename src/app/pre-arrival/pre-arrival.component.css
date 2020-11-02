@@ -24,13 +24,16 @@
     padding: 4% 4% 4% 4%
 }
 .secTriInner{
-    margin-left:35%;font-weight:800;
+    margin-left:35%;
+    font-weight:800;
 }
 .flex{
     display:flex;
 }
 .section3{
-    padding-left:10%;padding-right:10%;padding-top:5%;;
+    padding-left:10%;
+    padding-right:10%;
+    padding-top:5%;;
 }
 .secInnerBody{
     text-align: center;

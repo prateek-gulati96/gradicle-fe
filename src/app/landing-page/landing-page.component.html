@@ -33,17 +33,7 @@
                         <span style="color:white;margin-left: 3%;"><a style="color:white;" class="page-scroll" href="#news">News</a></span>
                         <span style="color:white;margin-left: 3%;"><a style="color:white;" class="page-scroll" href="#contact">Contact</a></span>
 
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <!-- <div  class="navbar-collapse collapse" id="myNavbar">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a class="page-scroll" href="#hero">Home</a></li>
-                                <li><a class="page-scroll" href="#features">Features</a></li>
-                                <li><a class="page-scroll" href="#pricing">Pricing</a></li>
-                                <li><a class="page-scroll" href="#faqs">Faq</a></li>
-                                <li><a class="page-scroll" href="#news">News</a></li>
-                                <li><a class="page-scroll" href="#contact">Contact</a></li>
-                            </ul>
-                        </div> -->
+                      
 
                     </div>
                 </div>
@@ -172,26 +162,7 @@
                     <div  class="secTriInner">{{blogInfo[7].subcategory}}</div>
                     <a routerLink="/blogs"  [queryParams]="blogInfo[7]" style="margin-left:10%;">{{blogInfo[7].blogTopic}}</a>
                 </div>
-                <!-- <div *ngIf="blogInfo[]" class="quarterWidth">
-                    <div class="marginForty">icon</div>
-                    <div class="secTriInner">Ideation</div>
-                    <div style="width:60%;margin-left:40%;">This is the first step where you start planning about things</div>
-                </div>
-                <div *ngIf="blogInfo[]" class="quarterWidth">
-                    <div class="marginForty">icon</div>
-                    <div class="secTriInner">Ideation</div>
-                    <div style="width:60%;margin-left:40%;">This is the first step where you start planning about things</div>
-                </div>
-                <div *ngIf="blogInfo[]" class="quarterWidth">
-                    <div class="marginForty">icon</div>
-                    <div class="secTriInner">Ideation</div>
-                    <div style="width:60%;margin-left:40%;">This is the first step where you start planning about things</div>
-                </div>
-                <div *ngIf="blogInfo[]" class="quarterWidth">
-                    <div class="marginForty">icon</div>
-                    <div class="secTriInner">Ideation</div>
-                    <div style="width:60%;margin-left:40%;">This is the first step where you start planning about things</div>
-                </div> -->
+                
             </div>
         </div>
         <br><br>
@@ -242,10 +213,10 @@
                                     
                                       
                                             <ul class="overview-list">
-                                                <li><span href="#" class="ti-vector"></span> Scheduling</li>
-                                                <li><span href="#" class="ti-bar-chart"></span> Online Consultations</li>
-                                                <li><span href="#" class="ti-headphone-alt"></span> Application</li>
-                                                <li><span href="#" class="ti-cup"></span> Visa</li>
+                                                <li><span href="#" class="ti-vector"></span><a routerLink="/preArrival/GRE" class="white-text">GRE/GMAT</a></li>
+                                                <li><span href="#" class="ti-bar-chart"></span><a routerLink="/preArrival/Online Consultations" class="white-text"> Online Consultations</a> </li>
+                                                <li><span href="#" class="ti-headphone-alt"></span><a routerLink="/preArrival/Application" class="white-text"> Application</a></li>
+                                                <li><span href="#" class="ti-cup"></span><a routerLink="/preArrival/Visa" class="white-text">Visa</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -256,10 +227,11 @@
                                             <h6 class="white-text">Post Application</h6>
                                             <p class="white-text">This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.This is something that I am writing on Tuesday because we have a meeting tomorrow and we will be changing this with catchy content folks.</p>
                                             <ul class="overview-list white-text">
-                                                <li ><span class="ti-vector"></span> Scheduling</li>
-                                                <li><span class="ti-bar-chart"></span> Online Consultations</li>
-                                                <li><span class="ti-headphone-alt"></span> Application</li>
-                                                <li><span class="ti-cup"></span> Visa</li>
+                                                <li><span href="#" class="ti-vector"></span><a routerLink="/preArrival/Scheduling" class="white-text">Scheduling</a></li>
+                                                <li><span href="#" class="ti-bar-chart"></span><a routerLink="/preArrival/Online Consultations" class="white-text"> Online Consultations</a> </li>
+                                                <li><span href="#" class="ti-headphone-alt"></span><a routerLink="/preArrival/Application" class="white-text"> Application</a></li>
+                                                <li><span href="#" class="ti-cup"></span><a routerLink="/preArrival/Visa" class="white-text">Visa</a></li>
+                                           
                                             </ul>
                                         </div>
                                     </div>

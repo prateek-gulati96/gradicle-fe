@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:'landing-page',component:LandingPageComponent},
   {path:'',component:LandingPageComponent},
   {path:'preArrival',component:PreArrivalComponent},
-  // {path:'preArrival/:subCategory',component:PreArrivalComponent},
+  {path:'preArrival/:subCategory',component:PreArrivalComponent},
   {path:'blogs',component:BlogsComponent},
 ];
 

@@ -8,6 +8,7 @@ import { PopupComponentComponent } from './landing-page/popup-component/popup-co
 import { BlogsComponent } from './blogs/blogs.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { PreArrivalComponent } from './pre-arrival/pre-arrival.component';
+import { ShortenTextPipe } from './shorten-text.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PreArrivalComponent } from './pre-arrival/pre-arrival.component';
     PopupComponentComponent,
     BlogsComponent,
     PreArrivalComponent,
-    truncate
+    ShortenTextPipe,
+    
   ],
   imports: [
     BrowserModule,

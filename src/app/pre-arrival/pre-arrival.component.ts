@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pre-arrival',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreArrivalComponent implements OnInit {
   blogDetails  : details[]
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private router:Router) { }
   features = [
     { 
       "one": "Ideation",
@@ -36,12 +37,18 @@ export class PreArrivalComponent implements OnInit {
     this.http.get(url).subscribe((data: any[]) => {
         
         data.forEach(res => {
-          let detail : details = { id: res._id , body: res.body, blogTopic:res.blogTopic, image: res.image , subCategory : res.subCategory};
+          
+          let detail : details = { id: res._id , body: res.body, blogTopic:res.blogTopic, image: "http://localhost:3000/"+res.image , subCategory : res.subcategory};
           this.blogDetails.push(detail)
         });
           this.blogDetails=this.blogDetails.reverse()
           console.log(this.blogDetails)
         });
+  }
+
+  openBlog(input)
+  {
+    this.router.navigate(["/blogs"],input)
   }
 
   ngOnInit(): void {

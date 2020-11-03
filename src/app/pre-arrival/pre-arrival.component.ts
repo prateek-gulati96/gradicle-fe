@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pre-arrival',
@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class PreArrivalComponent implements OnInit {
   blogDetails  : details[]
-  constructor(private http : HttpClient, private router:Router) { }
+  subcategory : String;
+  constructor(private http : HttpClient, private router:Router, private _Activatedroute: ActivatedRoute) { }
   features = [
     { 
       "one": "Ideation",
@@ -32,13 +33,13 @@ export class PreArrivalComponent implements OnInit {
   getBlogListBasedCategory(input)
   {
     
-    let url = 'http://localhost:3000/app/blog/category/Pre Arrival';
+    let url = 'http://localhost:3000/app/blog/category/'+input;
     this.blogDetails = []
     this.http.get(url).subscribe((data: any[]) => {
         
         data.forEach(res => {
           
-          let detail : details = { id: res._id , body: res.body, blogTopic:res.blogTopic, image: "http://localhost:3000/"+res.image , subCategory : res.subcategory};
+          let detail : details = { id: res._id , body: res.body, blogTopic:res.blogTopic, image: "http://localhost:3000/"+res.image , subCategory : res.subcategory, videoURL : res.videoURL};
           this.blogDetails.push(detail)
         });
           this.blogDetails=this.blogDetails.reverse()
@@ -48,11 +49,12 @@ export class PreArrivalComponent implements OnInit {
 
   openBlog(input)
   {
-    this.router.navigate(["/blogs"],input)
+    this.router.navigate(["/blogs"],{ queryParams: input})
   }
 
   ngOnInit(): void {
-    this.getBlogListBasedCategory(123);
+    this.subcategory =  this._Activatedroute.snapshot.paramMap.get("subCategory");
+    this.getBlogListBasedCategory(this.subcategory);
   }
 
 }
@@ -61,5 +63,6 @@ interface details{
   body : String,
   blogTopic:String,
   subCategory : String,
-  image : String
+  image : String,
+  videoURL : String
 }

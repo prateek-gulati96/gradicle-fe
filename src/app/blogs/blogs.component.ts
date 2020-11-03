@@ -13,8 +13,10 @@ export class BlogsComponent implements OnInit {
   blogImg:any;
   videoUrl:any;
   blogTopic:any;
+  safeURL : any ; 
 
   constructor(private activatedRoute:ActivatedRoute , public _DomSanitizationService: DomSanitizer) { 
+    
     
   }
   
@@ -23,10 +25,11 @@ export class BlogsComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params=>{
       this.blogHtml=params.body;
       this.blogTopic=params.blogTopic;   
+      this.blogImg = params.image;
       console.log(params);      
-      this.videoUrl=this._DomSanitizationService.bypassSecurityTrustResourceUrl(params.videoURL);
-      console.log('videoUrl',this.videoUrl);
+      this.safeURL=params.videoURL;
     })
+    this.videoUrl = this._DomSanitizationService.bypassSecurityTrustResourceUrl(this.safeURL)
   }
 
 }

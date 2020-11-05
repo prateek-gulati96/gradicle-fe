@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blogs',
@@ -15,11 +15,7 @@ export class BlogsComponent implements OnInit {
   blogTopic:any;
   safeURL : any ; 
 
-  constructor(private activatedRoute:ActivatedRoute , public _DomSanitizationService: DomSanitizer) { 
-    
-    
-  }
-  
+  constructor(private activatedRoute:ActivatedRoute , public _DomSanitizationService: DomSanitizer) {}
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params=>{
